@@ -14,7 +14,7 @@ only Elexon BMRS national wind data: [FUELHH](https://bmrs.elexon.co.uk/api-docu
 for actuals (`fuelType = WIND`) and [WINDFOR](https://bmrs.elexon.co.uk/api-documentation/endpoint/datasets/WINDFOR/stream)
 for forecasts.
 
-- **Live app:** _add the Vercel URL here after deploying (see [Deployment](#deployment))_
+- **Live app:** https://elexon-wind-forecast-vert.vercel.app
 - **Video walkthrough:** _add the unlisted YouTube link here_
 
 | Decision day | Forecast accuracy |
@@ -284,17 +284,17 @@ analysed range, a malformed time, or `from` after `to`. If the data source is un
 
 ## Deployment
 
-The app is deployed on **Vercel**:
+The app is deployed on **Vercel** at https://elexon-wind-forecast-vert.vercel.app:
 
 - the React build is served as static files;
 - `api/index.py` runs the FastAPI app as a Python serverless function;
 - `/api/*` is rewritten to that function (see `vercel.json`).
 
-To deploy:
-
-1. Push this repository to GitHub, then import it in Vercel (or run `npx vercel --prod` from
-   the repository root). No extra settings are needed; `vercel.json` defines the build.
-2. The function reads the bundled snapshot, so no secrets or environment variables are required.
+The Vercel project is connected to this GitHub repository, so every push to `main` deploys to
+production automatically. To deploy your own copy, import the repository in Vercel or run
+`npx vercel --prod` from the repository root. No extra settings are needed: `vercel.json`
+defines the build, and the function reads the bundled snapshot, so no secrets or environment
+variables are required.
 
 The same app also runs as a single Docker container on any container host.
 
