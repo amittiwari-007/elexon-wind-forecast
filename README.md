@@ -14,7 +14,7 @@ only Elexon BMRS national wind data: [FUELHH](https://bmrs.elexon.co.uk/api-docu
 for actuals (`fuelType = WIND`) and [WINDFOR](https://bmrs.elexon.co.uk/api-documentation/endpoint/datasets/WINDFOR/stream)
 for forecasts.
 
-- **Live app:** https://elexon-wind-forecast-vert.vercel.app
+- **Live app:** https://elexon-wind-desk.vercel.app
 - **Video walkthrough:** _add the unlisted YouTube link here_
 
 | Decision day | Forecast accuracy |
@@ -284,7 +284,7 @@ analysed range, a malformed time, or `from` after `to`. If the data source is un
 
 ## Deployment
 
-The app is deployed on **Vercel** at https://elexon-wind-forecast-vert.vercel.app:
+The app is deployed on **Vercel** at https://elexon-wind-desk.vercel.app:
 
 - the React build is served as static files;
 - `api/index.py` runs the FastAPI app as a Python serverless function;
